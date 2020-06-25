@@ -1,11 +1,16 @@
 package com.Silver2040.OtherUtilities.init;
 
 import com.Silver2040.OtherUtilities.OtherUtilities;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.LazyValue;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -67,6 +72,11 @@ public class ItemInit {
         event.getRegistry().register(new PickaxeItem(VibraniumItemTier.VIBRANIUM,-36,-2.8f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_pickaxe"));
         event.getRegistry().register(new ShovelItem(VibraniumItemTier.VIBRANIUM,-36,-2.8f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_shovel"));
         event.getRegistry().register(new AxeItem(VibraniumItemTier.VIBRANIUM,64,-3.0f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_axe"));
+
+        event.getRegistry().register(new ArmorItem(OtherUtilitiesArmorMaterial.VIBRANIUM, EquipmentSlotType.HEAD, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_helmet"));
+        event.getRegistry().register(new ArmorItem(OtherUtilitiesArmorMaterial.VIBRANIUM, EquipmentSlotType.CHEST, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_chestplate"));
+        event.getRegistry().register(new ArmorItem(OtherUtilitiesArmorMaterial.VIBRANIUM, EquipmentSlotType.LEGS, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_leggings"));
+        event.getRegistry().register(new ArmorItem(OtherUtilitiesArmorMaterial.VIBRANIUM, EquipmentSlotType.FEET, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_boots"));
 
         //event.getRegistry().register(new BowItem(new BowItem().Properties().group(OtherUtilities.TAB).))
     }
@@ -168,6 +178,66 @@ public class ItemInit {
         @Override
         public Ingredient getRepairMaterial() {
             return this.repairMaterial.getValue();
+        }
+    }
+    public enum OtherUtilitiesArmorMaterial implements IArmorMaterial{
+        VIBRANIUM(OtherUtilities.MOD_ID + ":armorv", 10 , new int[]{8,12,16,10},250, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,15.0f, () -> {
+           return Ingredient.fromItems(ItemInit.vibranium);
+        });
+        private static final int[] MAX_DAMAGE_ARRAY = new int[] {12,16,20,14};
+        private final String name;
+        private final int maxDamageFactor;
+        private final int[] damageReductionAmountArray;
+        private final int enchantability;
+        private final SoundEvent soundevent;
+        private final float toughness;
+        private final LazyValue<Ingredient> repairMaterial;
+
+        private OtherUtilitiesArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountIn, int enchantabilityIn, SoundEvent soundEventIn, float toughnessIn, Supplier<Ingredient>repairMaterialIn){
+            this.name = nameIn;
+            this.maxDamageFactor = maxDamageFactorIn;
+            this.damageReductionAmountArray = damageReductionAmountIn;
+            this.enchantability = enchantabilityIn;
+            this.soundevent = soundEventIn;
+            this.toughness = toughnessIn;
+            this.repairMaterial = new LazyValue<>(repairMaterialIn);
+
+        }
+
+        @Override
+        public int getDurability(EquipmentSlotType slotIn) {
+            return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
+        }
+
+        @Override
+        public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+            return this.damageReductionAmountArray[slotIn.getIndex()];
+        }
+
+        @Override
+        public int getEnchantability() {
+            return this.enchantability;
+        }
+
+        @Override
+        public SoundEvent getSoundEvent() {
+            return this.soundevent;
+        }
+
+        @Override
+        public Ingredient getRepairMaterial() {
+            return this.repairMaterial.getValue();
+        }
+
+        @OnlyIn(Dist.CLIENT)
+        @Override
+        public String getName() {
+            return this.name;
+        }
+
+        @Override
+        public float getToughness() {
+            return this.toughness;
         }
     }
 }
