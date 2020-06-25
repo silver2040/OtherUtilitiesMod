@@ -181,10 +181,10 @@ public class ItemInit {
         }
     }
     public enum OtherUtilitiesArmorMaterial implements IArmorMaterial{
-        VIBRANIUM(OtherUtilities.MOD_ID + ":armorv", 10 , new int[]{8,12,16,10},250, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,15.0f, () -> {
+        VIBRANIUM(OtherUtilities.MOD_ID + ":armorv", 10 , new int[]{32,34,40,30},250, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,15.0f, () -> {
            return Ingredient.fromItems(ItemInit.vibranium);
         });
-        private static final int[] MAX_DAMAGE_ARRAY = new int[] {12,16,20,14};
+        private static final int[] MAX_DAMAGE_ARRAY = new int[] {42,46,50,44};
         private final String name;
         private final int maxDamageFactor;
         private final int[] damageReductionAmountArray;
@@ -206,7 +206,7 @@ public class ItemInit {
 
         @Override
         public int getDurability(EquipmentSlotType slotIn) {
-            return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
+            return 20000;
         }
 
         @Override
