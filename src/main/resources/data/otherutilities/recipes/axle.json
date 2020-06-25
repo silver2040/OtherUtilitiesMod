@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "ddd",
+    "aaa",
+    "ddd"
+  ],
+  "key":
+  {
+    "a":
+    {
+      "item": "minecraft:iron_ingot"
+    }
+
+  },
+  "result":
+  {
+    "item": "otherutilities:axle",
+    "count": 3
+  }
+}

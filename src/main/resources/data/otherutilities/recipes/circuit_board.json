@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "yyy",
+    "zzz",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "otherutilities:plastic"
+    },
+    "y":
+    {
+      "item": "minecraft:redstone"
+    },
+    "z":
+    {
+      "item": "otherutilities:silicon"
+    }
+  },
+  "result":
+  {
+    "item": "otherutilities:circuit_board",
+    "count": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "axa",
+    "xax",
+    "axa"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "a":
+    {
+      "item": "otherutilities:caliber"
+    }
+  },
+  "result":
+  {
+    "item": "otherutilities:gear",
+    "count": 1
+  }
+}

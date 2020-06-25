@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "aaa",
+    "cbc",
+    "ddd"
+  ],
+  "key":
+  {
+    "a":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "b":
+    {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "c":
+    {
+      "item": "minecraft:diamond"
+    },
+    "d":
+    {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result":
+  {
+    "item": "otherutilities:beskar_steel",
+    "count": 3
+  }
+}

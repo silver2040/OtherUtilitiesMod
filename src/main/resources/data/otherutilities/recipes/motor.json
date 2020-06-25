@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "axa",
+    "xzx",
+    "axa"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "otherutilities:gear"
+    },
+    "a":
+    {
+      "item": "otherutilities:caliber"
+    },
+    "z":
+    {
+      "item": "otherutilities:circuit_board"
+    }
+  },
+  "result":
+  {
+    "item": "otherutilities:motor",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "otherutilities:bread_and_cheese"
+  },
+  "result": "otherutilities:grilled_cheese",
+  "experience": 1.0,
+  "cookingtime": 200
+}

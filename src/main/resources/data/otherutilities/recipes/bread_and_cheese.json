@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "otherutilities:cheese"
+    },
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "result":
+  {
+    "item": "otherutilities:bread_and_cheese",
+    "count": 1
+  }
+}
