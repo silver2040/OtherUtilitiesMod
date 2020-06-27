@@ -2,6 +2,7 @@ package com.Silver2040.OtherUtilities.util;
 
 import com.Silver2040.OtherUtilities.OtherUtilities;
 import com.Silver2040.OtherUtilities.blocks.*;
+import com.Silver2040.OtherUtilities.items.DiamondBow;
 import com.Silver2040.OtherUtilities.items.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraft.item.ArmorItem;
@@ -34,6 +35,7 @@ public class RegistryHandler {
     public static final RegistryObject<Item> Caliber_Ore_Block_Item = ITEMS.register("caliber_ore_block", () -> new BlockItemBase(Caliber_Ore_Block.get()));
     public static final RegistryObject<Block> Beskar_Steel_Block = BLOCKS.register("beskar_steel_block", BeskarSteelBlock::new);
     public static final RegistryObject<Item> Beskar_Steel_Block_Item = ITEMS.register("beskar_steel_block", () -> new BlockItemBase(Beskar_Steel_Block.get()));
+    public static final RegistryObject<Item> Diamond_Bow = ITEMS.register("diamond_bow", DiamondBow::new);
 
 
 

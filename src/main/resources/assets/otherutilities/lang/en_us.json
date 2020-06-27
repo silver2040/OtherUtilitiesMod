@@ -26,7 +26,10 @@
   "item.otherutilities.vibranium_sword": "Vibranium Sword",
   "item.otherutilities.vibranium_pickaxe": "Vibranium Pickaxe",
   "item.otherutilities.vibranium_axe": "Vibranium Axe",
-  "item.otherutilities.vibranium_shovel": "Vibranium Shovel"
-
+  "item.otherutilities.vibranium_shovel": "Vibranium Shovel",
+  "item.otherutilities.diamond_bow": "Diamond Bow",
+  "item.otherUtilities.iron_bow": "Iron Bow",
+  "item.otherUtilities.gold_bow": "Gold Bow",
+  "item.otherUtilities.netherite_bow": "Netherite Bow"
 
 }
