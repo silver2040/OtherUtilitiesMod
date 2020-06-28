@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "otherutilities:items/iron_bow"
+    "layer0": "otherutilities:items/netherite_bow"
   },
   "display": {
     "thirdperson_righthand": {
@@ -31,21 +31,21 @@
         "pulling": 1,
         "pull": 0
       },
-      "model": "otherutilities:item/iron_bow_pulling_0"
+      "model": "otherutilities:item/netherite_bow_pulling_0"
     },
     {
       "predicate": {
         "pulling": 1,
         "pull": 0.65
       },
-      "model": "otherutilities:item/iron_bow_pulling_1"
+      "model": "otherutilities:item/netherite_bow_pulling_1"
     },
     {
       "predicate": {
         "pulling": 1,
         "pull": 0.9
       },
-      "model": "otherutilities:item/iron_bow_pulling_2"
+      "model": "otherutilities:item/netherite_bow_pulling_2"
     }
   ]
 }

@@ -1,10 +1,14 @@
 package com.Silver2040.OtherUtilities;
 
 import com.Silver2040.OtherUtilities.init.ItemInit;
+import com.Silver2040.OtherUtilities.items.BaseBow;
+import com.Silver2040.OtherUtilities.items.DiamondBow;
 import com.Silver2040.OtherUtilities.util.RegistryHandler;
 import com.Silver2040.OtherUtilities.world.gen.OreGen;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -41,6 +45,61 @@ public class OtherUtilities {
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
+        ItemModelsProperties.func_239418_a_(RegistryHandler.Diamond_Bow.get(), new ResourceLocation("pull"), (stack, world, entity) -> {
+            if (entity == null) {
+                return 0F;
+            } else {
+                if (entity.getActiveItemStack().getItem() instanceof BaseBow) {
+                    return (float)(stack.getUseDuration() - entity.getItemInUseCount()) / 20F;
+                } else {
+                    return 0F;
+                }
+            }
+        });
+
+        ItemModelsProperties.func_239418_a_(RegistryHandler.Diamond_Bow.get(), new ResourceLocation("pulling"), (stack, world, entity) -> entity != null && entity.isHandActive() && entity.getActiveItemStack() == stack ? 1F : 0F);
+
+        ItemModelsProperties.func_239418_a_(RegistryHandler.Iron_Bow.get(), new ResourceLocation("pull"), (stack, world, entity) -> {
+            if (entity == null) {
+                return 0F;
+            } else {
+                if (entity.getActiveItemStack().getItem() instanceof BaseBow) {
+                    return (float)(stack.getUseDuration() - entity.getItemInUseCount()) / 20F;
+                } else {
+                    return 0F;
+                }
+            }
+        });
+
+        ItemModelsProperties.func_239418_a_(RegistryHandler.Iron_Bow.get(), new ResourceLocation("pulling"), (stack, world, entity) -> entity != null && entity.isHandActive() && entity.getActiveItemStack() == stack ? 1F : 0F);
+
+        ItemModelsProperties.func_239418_a_(RegistryHandler.Gold_Bow.get(), new ResourceLocation("pull"), (stack, world, entity) -> {
+            if (entity == null) {
+                return 0F;
+            } else {
+                if (entity.getActiveItemStack().getItem() instanceof BaseBow) {
+                    return (float)(stack.getUseDuration() - entity.getItemInUseCount()) / 20F;
+                } else {
+                    return 0F;
+                }
+            }
+        });
+
+        ItemModelsProperties.func_239418_a_(RegistryHandler.Gold_Bow.get(), new ResourceLocation("pulling"), (stack, world, entity) -> entity != null && entity.isHandActive() && entity.getActiveItemStack() == stack ? 1F : 0F);
+
+        ItemModelsProperties.func_239418_a_(RegistryHandler.Netherite_Bow.get(), new ResourceLocation("pull"), (stack, world, entity) -> {
+            if (entity == null) {
+                return 0F;
+            } else {
+                if (entity.getActiveItemStack().getItem() instanceof BaseBow) {
+                    return (float)(stack.getUseDuration() - entity.getItemInUseCount()) / 20F;
+                } else {
+                    return 0F;
+                }
+            }
+        });
+
+        ItemModelsProperties.func_239418_a_(RegistryHandler.Netherite_Bow.get(), new ResourceLocation("pulling"), (stack, world, entity) -> entity != null && entity.isHandActive() && entity.getActiveItemStack() == stack ? 1F : 0F);
 
     }
     @SubscribeEvent
@@ -57,10 +116,11 @@ public class OtherUtilities {
     public static final ItemGroup TAB = new ItemGroup("OtherUtilitiesTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ItemInit.caliber);
+            return new ItemStack(RegistryHandler.Caliber_Block.get());
         }
     };
 
+    /*
     public static class OtherUtilitiesItemGroup extends ItemGroup{
        // public static final OtherUtilitiesItemGroup instance = new OtherUtilitiesItemGroup(ItemGroup.GROUPS.length, "otherutilitiestab")
         private OtherUtilitiesItemGroup(int index, String label){
@@ -70,5 +130,5 @@ public class OtherUtilities {
         public ItemStack createIcon() {
             return new ItemStack(ItemInit.caliber);
         }
-    }
+    } */
 }
