@@ -68,6 +68,7 @@ public class ItemInit {
         event.getRegistry().register(new ShovelItem(VibraniumItemTier.VIBRANIUM,-36,-2.8f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_shovel"));
         event.getRegistry().register(new AxeItem(VibraniumItemTier.VIBRANIUM,64,-3.0f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_axe"));
 
+        //event.getRegistry().register(new BowItem(new BowItem().Properties().group(OtherUtilities.TAB).))
     }
     public enum CaliberItemTier implements IItemTier {
         CALIBER(4, 2000, 13.0F,7.0F, 250, () -> {
