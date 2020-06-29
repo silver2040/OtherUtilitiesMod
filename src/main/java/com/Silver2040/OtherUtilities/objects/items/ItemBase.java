@@ -1,8 +1,7 @@
-package com.Silver2040.OtherUtilities.items;
+package com.Silver2040.OtherUtilities.objects.items;
 
 import com.Silver2040.OtherUtilities.OtherUtilities;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 
 public class ItemBase extends Item {
     public ItemBase() {

@@ -1,4 +1,4 @@
-package com.Silver2040.OtherUtilities.items;
+package com.Silver2040.OtherUtilities.objects.items.bows;
 
 import com.Silver2040.OtherUtilities.OtherUtilities;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -8,7 +8,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.*;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
@@ -77,9 +76,8 @@ public class BaseBow extends BowItem {
                             abstractarrowentity.setFire(100);
                         }
 
-                        stack.damageItem(1, playerentity, (p_220009_1_) -> {
-                            p_220009_1_.sendBreakAnimation(playerentity.getActiveHand());
-                        });
+                        stack.damageItem(1, playerentity, (p_220009_1_) ->
+                                p_220009_1_.sendBreakAnimation(playerentity.getActiveHand()));
                         if (flag1 || playerentity.abilities.isCreativeMode && (itemstack.getItem() == Items.SPECTRAL_ARROW || itemstack.getItem() == Items.TIPPED_ARROW)) {
                             abstractarrowentity.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
                         }
@@ -87,7 +85,12 @@ public class BaseBow extends BowItem {
                         worldIn.addEntity(abstractarrowentity);
                     }
 
-                    worldIn.playSound((PlayerEntity)null, playerentity.getPosX(), playerentity.getPosY(), playerentity.getPosZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (random.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+                    worldIn.playSound(null, playerentity.getPosX(),
+                            playerentity.getPosY(),
+                            playerentity.getPosZ(),
+                            SoundEvents.ENTITY_ARROW_SHOOT,
+                            SoundCategory.PLAYERS,
+                            1.0F, 1.0F / (random.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
                     if (!flag1 && !playerentity.abilities.isCreativeMode) {
                         itemstack.shrink(1);
                         if (itemstack.isEmpty()) {
