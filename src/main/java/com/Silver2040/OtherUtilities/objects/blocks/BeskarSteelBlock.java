@@ -1,17 +1,17 @@
-package com.Silver2040.OtherUtilities.blocks;
+package com.Silver2040.OtherUtilities.objects.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 
-public class CaliberOreBlock extends Block {
-    public CaliberOreBlock() {
+public class BeskarSteelBlock extends Block {
+    public BeskarSteelBlock() {
         super(Block.Properties.create(Material.IRON)
-                .hardnessAndResistance(3.0f,9.0f)
+                .hardnessAndResistance(80.0f,1500.0f)
                 .sound(SoundType.METAL)
-                .harvestLevel(2)
+                .harvestLevel(3)
                 .harvestTool(ToolType.PICKAXE)
-        );
+        );  
     }
 }

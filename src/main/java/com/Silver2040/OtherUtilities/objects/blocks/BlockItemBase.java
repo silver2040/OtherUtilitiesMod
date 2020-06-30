@@ -1,4 +1,4 @@
-package com.Silver2040.OtherUtilities.blocks;
+package com.Silver2040.OtherUtilities.objects.blocks;
 
 import com.Silver2040.OtherUtilities.OtherUtilities;
 import net.minecraft.block.Block;
