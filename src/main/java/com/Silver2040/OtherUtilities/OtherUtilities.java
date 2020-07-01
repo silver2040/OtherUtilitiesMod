@@ -1,7 +1,8 @@
 package com.Silver2040.OtherUtilities;
 
 import com.Silver2040.OtherUtilities.init.ItemInit;
-import com.Silver2040.OtherUtilities.util.RegistryHandler;
+import com.Silver2040.OtherUtilities.init.ItemPropertyOverrides;
+import com.Silver2040.OtherUtilities.init.BlockInit;
 import com.Silver2040.OtherUtilities.world.gen.OreGen;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -25,11 +26,13 @@ public class OtherUtilities {
     public static OtherUtilities instance;
     public OtherUtilities() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ItemInit.init(modEventBus);
+        BlockInit.init(modEventBus);
+
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);
         instance = this;
 
-        RegistryHandler.init();
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -41,6 +44,7 @@ public class OtherUtilities {
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
+        ItemPropertyOverrides.doStuff();
 
     }
     @SubscribeEvent
@@ -57,10 +61,11 @@ public class OtherUtilities {
     public static final ItemGroup TAB = new ItemGroup("OtherUtilitiesTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ItemInit.caliber);
+            return new ItemStack(BlockInit.Caliber_Block.get());
         }
     };
 
+    /*
     public static class OtherUtilitiesItemGroup extends ItemGroup{
        // public static final OtherUtilitiesItemGroup instance = new OtherUtilitiesItemGroup(ItemGroup.GROUPS.length, "otherutilitiestab")
         private OtherUtilitiesItemGroup(int index, String label){
@@ -70,5 +75,5 @@ public class OtherUtilities {
         public ItemStack createIcon() {
             return new ItemStack(ItemInit.caliber);
         }
-    }
+    } */
 }
