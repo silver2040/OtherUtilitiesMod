@@ -1,5 +1,6 @@
 package com.Silver2040.OtherUtilities;
 
+import com.Silver2040.OtherUtilities.init.ContainerTypes;
 import com.Silver2040.OtherUtilities.init.ItemInit;
 import com.Silver2040.OtherUtilities.init.ItemPropertyOverrides;
 import com.Silver2040.OtherUtilities.init.BlockInit;
@@ -28,6 +29,7 @@ public class OtherUtilities {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ItemInit.init(modEventBus);
         BlockInit.init(modEventBus);
+        ContainerTypes.CONTAINER_TYPES.register(modEventBus);
 
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);

@@ -26,7 +26,7 @@ public class ItemInit {
 
     // materials??
     public static final RegistryObject<Item> axle = ITEMS.register("axle", ItemBase::new);
-    public static final RegistryObject<Item> circuit_board = ITEMS.register("circut_board", ItemBase::new);
+    public static final RegistryObject<Item> circuit_board = ITEMS.register("circuit_board", ItemBase::new);
     public static final RegistryObject<Item> plastic = ITEMS.register("plastic", ItemBase::new);
     public static final RegistryObject<Item> gear = ITEMS.register("gear", ItemBase::new);
     public static final RegistryObject<Item> motor = ITEMS.register("motor", ItemBase::new);
