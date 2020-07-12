@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "otherutilities:fake_water_flowing",
+    "otherutilities:fake_water_fluid"
+  ]
+}

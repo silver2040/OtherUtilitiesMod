@@ -3,16 +3,23 @@ package com.Silver2040.OtherUtilities.init;
 import com.Silver2040.OtherUtilities.OtherUtilities;
 import com.Silver2040.OtherUtilities.objects.blocks.BlockItemBase;
 import com.Silver2040.OtherUtilities.objects.items.ItemBase;
+import com.Silver2040.OtherUtilities.objects.items.SpeedPickaxe;
+import com.Silver2040.OtherUtilities.objects.items.SpeedSword;
 import com.Silver2040.OtherUtilities.objects.items.bows.*;
 import com.Silver2040.OtherUtilities.util.enums.CaliberItemTier;
+import com.Silver2040.OtherUtilities.util.enums.EmeraldItemTier;
 import com.Silver2040.OtherUtilities.util.enums.VibraniumItemTier;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import static net.minecraft.item.Items.BUCKET;
 
 
 
@@ -24,7 +31,7 @@ public class ItemInit {
         ITEMS.register(modEventBus);
     }
 
-    // materials??
+    // misc
     public static final RegistryObject<Item> axle = ITEMS.register("axle", ItemBase::new);
     public static final RegistryObject<Item> circuit_board = ITEMS.register("circuit_board", ItemBase::new);
     public static final RegistryObject<Item> plastic = ITEMS.register("plastic", ItemBase::new);
@@ -38,6 +45,9 @@ public class ItemInit {
     public static final RegistryObject<Item> diamond_bow = ITEMS.register("diamond_bow", DiamondBow::new);
     public static final RegistryObject<Item> iron_bow = ITEMS.register("iron_bow", IronBow::new);
     public static final RegistryObject<Item> gold_bow =  ITEMS.register("gold_bow", GoldBow::new);
+    public static final RegistryObject<Item> advanced_chest =  ITEMS.register("advanced_chest", ItemBase::new);
+    public static final RegistryObject<Item> gear_and_axle = ITEMS.register("gear_and_axle",ItemBase::new);
+
 
     // block-items
     public static final RegistryObject<BlockItem> Caliber_Block_Item = ITEMS.register("caliber_block", () ->
@@ -50,6 +60,10 @@ public class ItemInit {
             new BlockItemBase(BlockInit.Caliber_Ore_Block.get()));
     public static final RegistryObject<BlockItem> Beskar_Steel_Block_Item = ITEMS.register("beskar_steel_block", () ->
             new BlockItemBase(BlockInit.Beskar_Steel_Block.get()));
+    public static final RegistryObject<BlockItem> Fake_Water_Item = ITEMS.register("fake_water_block", () ->
+            new BlockItemBase(BlockInit.Fake_Water_Block.get()));
+  //  public static final RegistryObject<BlockItem> Silicon_Ore_Block_Item = ITEMS.register("silicon_ore_block", () ->
+     //       new BlockItemBase(BlockInit.SILICON_ORE_BLOCK.get()));
 
 
     // food
@@ -60,9 +74,10 @@ public class ItemInit {
                             .hunger(10)
                             .saturation(5.0f)
                             .setAlwaysEdible().fastToEat()
-                            .effect(() -> new EffectInstance(Effects.ABSORPTION, 500, 2),1)
-                            .effect(() -> new EffectInstance(Effects.REGENERATION, 500, 2),1)
-                            .effect(() -> new EffectInstance(Effects.SPEED,500,2),1)
+                            .effect(() -> new EffectInstance(Effects.ABSORPTION, 5000, 2),1)
+                            .effect(() -> new EffectInstance(Effects.REGENERATION, 5000, 2),1)
+                            .effect(() -> new EffectInstance(Effects.SPEED,5000,2),1)
+                            .effect(() -> new EffectInstance(Effects.FIRE_RESISTANCE, 5000, 2), 1)
                             .build())));
     public static final RegistryObject<Item> cupcake = ITEMS.register("cupcake", () ->
             new Item(new Item.Properties()
@@ -100,7 +115,16 @@ public class ItemInit {
             new ShovelItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> caliber_axe = ITEMS.register("caliber_axe", () ->
             new AxeItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> speed_sword = ITEMS.register("speed_sword", () ->
+            new SpeedSword(CaliberItemTier.CALIBER, 17,100f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> speed_pickaxe = ITEMS.register("speed_pickaxe", () ->
+            new SpeedPickaxe(CaliberItemTier.CALIBER, 17,100f, new Item.Properties().group(OtherUtilities.TAB)));
+   // public static final RegistryObject<Item> Gun = ITEMS.register("gun", () -> new  );
 
+
+
+    //public static final RegistryObject<Item> emerald_sword = ITEMS.register("emerald_sword", () ->
+         //   new SwordItem(EmeraldItemTier.EMERALD, 0,2.0f, new Item.Properties().group(OtherUtilities.TAB)));
     /*
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event){

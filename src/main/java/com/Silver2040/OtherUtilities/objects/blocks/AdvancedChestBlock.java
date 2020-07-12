@@ -52,6 +52,7 @@ public class AdvancedChestBlock extends Block {
             TileEntity tileEntity = worldIn.getTileEntity(pos);
             if (tileEntity instanceof AdvancedChestTileEntity) {
                 InventoryHelper.dropItems(worldIn, pos, ((AdvancedChestTileEntity) tileEntity).getItems());
+
             }
         }
     }

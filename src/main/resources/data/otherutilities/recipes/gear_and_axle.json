@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "otherutilities:axle"
+    },
+    {
+      "item": "otherutilities:gear"
+    }
+  ],
+  "result":
+  {
+    "item": "otherutilities:gear_and_axle",
+    "count": 1
+  }
+}

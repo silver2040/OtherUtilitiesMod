@@ -34,8 +34,8 @@
                 {
                   "function": "minecraft:set_count",
                   "count": {
-                    "min": 1,
-                    "max": 2,
+                    "min": 2,
+                    "max": 3,
                     "type": "minecraft:uniform"
                   }
                 },
@@ -50,7 +50,7 @@
                 }
 
               ],
-              "name": "otherutilities:caliber"
+              "name": "otherutilities:silicon"
             }
           ]
         }

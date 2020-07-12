@@ -1,15 +1,16 @@
 package com.Silver2040.OtherUtilities.util.enums;
 
 import com.Silver2040.OtherUtilities.init.ItemInit;
-import net.minecraft.item.IItemTier;
+import net.minecraft.client.Minecraft;
+import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 
 import java.util.function.Supplier;
 
-public enum VibraniumItemTier implements IItemTier {
-    VIBRANIUM(6, 10000, 80.0F, 40.0F, 250, () -> {
-        return Ingredient.fromItems(ItemInit.vibranium.get());
+public enum EmeraldItemTier implements IItemTier {
+    EMERALD(4, 2000, 10.0F,7.0F, 30, () -> {
+        return Ingredient.fromItems(Items.EMERALD);
     });
 
     private final int harvestLevel;
@@ -18,8 +19,7 @@ public enum VibraniumItemTier implements IItemTier {
     private final float attackDamage;
     private final int enchantability;
     private final LazyValue<Ingredient> repairMaterial;
-
-    VibraniumItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
+    EmeraldItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
         this.harvestLevel = harvestLevel;
         this.maxUses = maxUses;
         this.efficiency = efficiency;

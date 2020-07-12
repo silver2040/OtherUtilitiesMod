@@ -30,7 +30,17 @@
   "item.otherutilities.netherite_bow": "Netherite Bow",
   "item.otherutilities.diamond_bow": "Diamond Bow",
   "item.otherutilities.iron_bow": "Iron Bow",
-  "item.otherutilities.gold_bow": "Gold Bow"
+  "item.otherutilities.gold_bow": "Gold Bow",
+  "item.otherutilities.speed_sword": "Speed Sword",
+  "item.otherutilities.gear_and_axle": "Gear and Axle",
+  "item.otherutilities.emerald_sword": "Emerald Sword",
+  "item.otherutilities.fake_water": "Fake Water",
+  "block.otherutilities.fake_water_block": "Fake Water Block",
+  "block.otherutilities.silicon_ore_block": "Silicon Ore"
+
+
+
+
 
 
 }

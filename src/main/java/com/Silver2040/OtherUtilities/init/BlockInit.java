@@ -2,15 +2,13 @@ package com.Silver2040.OtherUtilities.init;
 
 import com.Silver2040.OtherUtilities.OtherUtilities;
 import com.Silver2040.OtherUtilities.objects.blocks.*;
-import com.Silver2040.OtherUtilities.objects.items.*;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+
 
 public class BlockInit {
 
@@ -27,6 +25,10 @@ public class BlockInit {
     public static final RegistryObject<Block> Caliber_Ore_Block = BLOCKS.register("caliber_ore_block", CaliberOreBlock::new);
     public static final RegistryObject<Block> Beskar_Steel_Block = BLOCKS.register("beskar_steel_block", BeskarSteelBlock::new);
     public static final RegistryObject<Block> Advanced_Chest = BLOCKS.register("advanced_chest", CaliberBlock::new);
+    public static final RegistryObject<Block> Fake_Water_Block = BLOCKS.register("fake_water_block", FakeWaterBlock::new);
+   // public static final RegistryObject<Block> SILICON_ORE_BLOCK = BLOCKS.register("silicon_ore_block", SiliconOreBlock::new);
+
+
 
     // public static final RegistryObject<Item> Caliber_Block_Item = ITEMS.register("caliber_block", () -> new BlockItemBase(Caliber_Block.get()));
     //public static final RegistryObject<Item> Caliber_Helmet = ITEMS.register("caliber_helmet", ItemBase::new);

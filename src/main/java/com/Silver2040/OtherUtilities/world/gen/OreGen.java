@@ -12,7 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class OreGen {
     public static void generateOre() {
         for (Biome biome : ForgeRegistries.BIOMES) {
-                if ((biome == Biomes.SAVANNA)||(biome == Biomes.SAVANNA_PLATEAU)) {
+                if ((biome == Biomes.SAVANNA)||(biome == Biomes.SAVANNA_PLATEAU)||(biome == Biomes.SHATTERED_SAVANNA_PLATEAU)) {
                     ConfiguredPlacement<CountRangeConfig> VibraniumConfig = Placement.COUNT_RANGE
                             .configure(new CountRangeConfig(1, 5, 5, 20));
                     biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
@@ -20,10 +20,18 @@ public class OreGen {
                             .withPlacement(VibraniumConfig));
                 }
             ConfiguredPlacement<CountRangeConfig> CaliberConfig = Placement.COUNT_RANGE
-                    .configure(new CountRangeConfig(7, 5, 5, 40));
+                    .configure(new CountRangeConfig(2 , 5, 5, 40));
             biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
                     .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.Caliber_Ore_Block.get().getDefaultState(), 8))
                     .withPlacement(CaliberConfig));
+          /*  ConfiguredPlacement<CountRangeConfig> SiliconConfig = Placement.COUNT_RANGE
+                    .configure(new CountRangeConfig(5, 5, 5, 30));
+            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
+                    .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.SILICON_ORE_BLOCK.get().getDefaultState(), 8))
+                    .withPlacement(SiliconConfig));
+
+           */
         }
     }
 }
+

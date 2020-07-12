@@ -8,7 +8,7 @@ import net.minecraft.util.LazyValue;
 import java.util.function.Supplier;
 
 public enum CaliberItemTier implements IItemTier {
-    CALIBER(4, 2000, 13.0F,7.0F, 250, () -> {
+    CALIBER(5, 2500, 15.0F,7.0F, 250, () -> {
         return Ingredient.fromItems(ItemInit.caliber.get());
     });
 
