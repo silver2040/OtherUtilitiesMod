@@ -1,49 +1,107 @@
 package com.Silver2040.OtherUtilities.init;
 
 import com.Silver2040.OtherUtilities.OtherUtilities;
-import net.minecraft.inventory.EquipmentSlotType;
+import com.Silver2040.OtherUtilities.objects.blocks.BlockItemBase;
+import com.Silver2040.OtherUtilities.objects.items.ItemBase;
+import com.Silver2040.OtherUtilities.objects.items.bows.*;
+import com.Silver2040.OtherUtilities.util.enums.CaliberItemTier;
+import com.Silver2040.OtherUtilities.util.enums.VibraniumItemTier;
 import net.minecraft.item.*;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.util.LazyValue;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(modid = OtherUtilities.MOD_ID, bus = Bus.MOD)
-@ObjectHolder(OtherUtilities.MOD_ID)
+
 public class ItemInit {
 
-    public static final Item axle = null;
-    public static final Item circuit_board = null;
-    public static final Item plastic = null;
-    public static final Item gear = null;
-    public static final Item motor = null;
-    public static final Item silicon = null;
-    public static final Item caliber = null;
-    public static final Item vibranium = null;
-    public static final Item beskar_steel = null;
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, OtherUtilities.MOD_ID);
+
+    public static void init(IEventBus modEventBus) {
+        ITEMS.register(modEventBus);
+    }
+
+    // materials??
+    public static final RegistryObject<Item> axle = ITEMS.register("axle", ItemBase::new);
+    public static final RegistryObject<Item> circuit_board = ITEMS.register("circut_board", ItemBase::new);
+    public static final RegistryObject<Item> plastic = ITEMS.register("plastic", ItemBase::new);
+    public static final RegistryObject<Item> gear = ITEMS.register("gear", ItemBase::new);
+    public static final RegistryObject<Item> motor = ITEMS.register("motor", ItemBase::new);
+    public static final RegistryObject<Item> silicon = ITEMS.register("silicon", ItemBase::new);
+    public static final RegistryObject<Item> caliber = ITEMS.register("caliber", ItemBase::new);
+    public static final RegistryObject<Item> vibranium = ITEMS.register("vibranium", ItemBase::new);
+    public static final RegistryObject<Item> beskar_steel = ITEMS.register("beskar_steel", ItemBase::new);
+    public static final RegistryObject<Item> netherite_bow = ITEMS.register("netherite_bow", NetheriteBow::new);
+    public static final RegistryObject<Item> diamond_bow = ITEMS.register("diamond_bow", DiamondBow::new);
+    public static final RegistryObject<Item> iron_bow = ITEMS.register("iron_bow", IronBow::new);
+    public static final RegistryObject<Item> gold_bow =  ITEMS.register("gold_bow", GoldBow::new);
+
+    // block-items
+    public static final RegistryObject<BlockItem> Caliber_Block_Item = ITEMS.register("caliber_block", () ->
+            new BlockItemBase(BlockInit.Caliber_Block.get()));
+    public static final RegistryObject<BlockItem> Vibranium_Block_Item = ITEMS.register("vibranium_block", () ->
+            new BlockItemBase(BlockInit.Vibranium_Block.get()));
+    public static final RegistryObject<BlockItem> Vibranium_Ore_Block_Item = ITEMS.register("vibranium_ore_block", () ->
+            new BlockItemBase(BlockInit.Vibranium_Ore_Block.get()));
+    public static final RegistryObject<BlockItem> Caliber_Ore_Block_Item = ITEMS.register("caliber_ore_block", () ->
+            new BlockItemBase(BlockInit.Caliber_Ore_Block.get()));
+    public static final RegistryObject<BlockItem> Beskar_Steel_Block_Item = ITEMS.register("beskar_steel_block", () ->
+            new BlockItemBase(BlockInit.Beskar_Steel_Block.get()));
+
+
+    // food
+    public static final RegistryObject<Item> diamond_apple = ITEMS.register("diamond_apple", () ->
+            new Item(new Item.Properties()
+                    .group(OtherUtilities.TAB)
+                    .food(new Food.Builder()
+                            .hunger(10)
+                            .saturation(5.0f)
+                            .setAlwaysEdible().fastToEat()
+                            .effect(() -> new EffectInstance(Effects.ABSORPTION, 500, 2),1)
+                            .effect(() -> new EffectInstance(Effects.REGENERATION, 500, 2),1)
+                            .effect(() -> new EffectInstance(Effects.SPEED,500,2),1)
+                            .build())));
+    public static final RegistryObject<Item> cupcake = ITEMS.register("cupcake", () ->
+            new Item(new Item.Properties()
+                    .group(OtherUtilities.TAB)
+                    .food(new Food.Builder()
+                            .hunger(10)
+                            .saturation(5.0f)
+                            .setAlwaysEdible()
+                            .fastToEat()
+                            .effect(() -> new EffectInstance(Effects.ABSORPTION, 500, 2),1)
+                            .effect(() -> new EffectInstance(Effects.REGENERATION, 500, 2),1)
+                            .effect(() -> new EffectInstance(Effects.SPEED,500,2),1)
+                            .build())));
+    public static final RegistryObject<Item> bread_and_cheese = ITEMS.register("bread_and_cheese", () ->
+            new Item(new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> cheese = ITEMS.register("cheese", () ->
+            new Item(new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> grilled_cheese = ITEMS.register("grilled_cheese", () ->
+            new Item(new Item.Properties().group(OtherUtilities.TAB).food(new Food.Builder().hunger(10).saturation(10.0f).build())));
+
     //tools
-    public static final Item vibranium_sword = null;
-    public static final Item vibranium_pickaxe = null;
-    public static final Item vibranium_shovel = null;
-    public static final Item vibranium_axe = null;
-    public static final Item caliber_sword = null;
-    public static final Item caliber_pickaxe = null;
-    public static final Item caliber_shovel = null;
-    public static final Item caliber_axe = null;
+    public static final RegistryObject<Item> vibranium_sword = ITEMS.register("vibranium_sword", () ->
+            new SwordItem(VibraniumItemTier.VIBRANIUM, 59,0f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> vibranium_pickaxe = ITEMS.register("vibranium_pickaxe", () ->
+            new PickaxeItem(VibraniumItemTier.VIBRANIUM,-36,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> vibranium_shovel = ITEMS.register("vibranium_shovel", () ->
+            new ShovelItem(VibraniumItemTier.VIBRANIUM,-36,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> vibranium_axe = ITEMS.register("vibranium_axe", () ->
+            new AxeItem(VibraniumItemTier.VIBRANIUM,64,-3.0f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> caliber_sword = ITEMS.register("caliber_sword", () ->
+            new SwordItem(CaliberItemTier.CALIBER, 1,-1.5f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> caliber_pickaxe = ITEMS.register("caliber_pickaxe", () ->
+            new PickaxeItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> caliber_shovel = ITEMS.register("caliber_shovel", () ->
+            new ShovelItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> caliber_axe = ITEMS.register("caliber_axe", () ->
+            new AxeItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
 
-
-
+    /*
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event){
 
@@ -62,7 +120,7 @@ public class ItemInit {
         event.getRegistry().register(new Item(new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("cheese"));
         event.getRegistry().register(new Item(new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("bread_and_cheese"));
         event.getRegistry().register(new Item(new Item.Properties().group(OtherUtilities.TAB).food(new Food.Builder().hunger(10).saturation(10.0f).build())).setRegistryName("grilled_cheese"));
-       //tools
+        //tools
         event.getRegistry().register(new SwordItem(CaliberItemTier.CALIBER, 1,-1.5f, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("caliber_sword"));
         event.getRegistry().register(new PickaxeItem(CaliberItemTier.CALIBER,-3,-2.8f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("caliber_pickaxe"));
         event.getRegistry().register(new AxeItem(CaliberItemTier.CALIBER,-3,-2.8f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("caliber_axe"));
@@ -73,171 +131,5 @@ public class ItemInit {
         event.getRegistry().register(new ShovelItem(VibraniumItemTier.VIBRANIUM,-36,-2.8f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_shovel"));
         event.getRegistry().register(new AxeItem(VibraniumItemTier.VIBRANIUM,64,-3.0f,  new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_axe"));
 
-        event.getRegistry().register(new ArmorItem(OtherUtilitiesArmorMaterial.VIBRANIUM, EquipmentSlotType.HEAD, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_helmet"));
-        event.getRegistry().register(new ArmorItem(OtherUtilitiesArmorMaterial.VIBRANIUM, EquipmentSlotType.CHEST, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_chestplate"));
-        event.getRegistry().register(new ArmorItem(OtherUtilitiesArmorMaterial.VIBRANIUM, EquipmentSlotType.LEGS, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_leggings"));
-        event.getRegistry().register(new ArmorItem(OtherUtilitiesArmorMaterial.VIBRANIUM, EquipmentSlotType.FEET, new Item.Properties().group(OtherUtilities.TAB)).setRegistryName("vibranium_boots"));
-
-        //event.getRegistry().register(new BowItem(new BowItem().Properties().group(OtherUtilities.TAB).))
-    }
-    public enum CaliberItemTier implements IItemTier {
-        CALIBER(4, 2000, 13.0F,7.0F, 250, () -> {
-           return Ingredient.fromItems(ItemInit.caliber);
-        });
-
-        private final int harvestLevel;
-        private final int maxUses;
-        private final float efficiency;
-        private final float attackDamage;
-        private final int enchantability;
-        private final LazyValue<Ingredient> repairMaterial;
-        CaliberItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
-        this.harvestLevel = harvestLevel;
-        this.maxUses = maxUses;
-        this.efficiency = efficiency;
-        this.attackDamage = attackDamage;
-        this.enchantability = enchantability;
-        this.repairMaterial = new LazyValue<>(repairMaterial);
-        }
-
-        @Override
-        public int getMaxUses() {
-            return this.maxUses;
-        }
-
-        @Override
-        public float getEfficiency() {
-            return this.efficiency;
-        }
-
-        @Override
-        public float getAttackDamage() {
-            return this.attackDamage;
-        }
-
-        @Override
-        public int getHarvestLevel() {
-            return this.harvestLevel;
-        }
-
-        @Override
-        public int getEnchantability() {
-            return this.enchantability;
-        }
-
-        @Override
-        public Ingredient getRepairMaterial() {
-            return this.repairMaterial.getValue();
-        }
-    }
-    public enum VibraniumItemTier implements IItemTier {
-        VIBRANIUM(5, 10000, 80.0F,40.0F, 250, () -> {
-            return Ingredient.fromItems(ItemInit.vibranium);
-        });
-
-        private final int harvestLevel;
-        private final int maxUses;
-        private final float efficiency;
-        private final float attackDamage;
-        private final int enchantability;
-        private final LazyValue<Ingredient> repairMaterial;
-        VibraniumItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
-            this.harvestLevel = harvestLevel;
-            this.maxUses = maxUses;
-            this.efficiency = efficiency;
-            this.attackDamage = attackDamage;
-            this.enchantability = enchantability;
-            this.repairMaterial = new LazyValue<>(repairMaterial);
-        }
-
-        @Override
-        public int getMaxUses() {
-            return this.maxUses;
-        }
-
-        @Override
-        public float getEfficiency() {
-            return this.efficiency;
-        }
-
-        @Override
-        public float getAttackDamage() {
-            return this.attackDamage;
-        }
-
-        @Override
-        public int getHarvestLevel() {
-            return this.harvestLevel;
-        }
-
-        @Override
-        public int getEnchantability() {
-            return this.enchantability;
-        }
-
-        @Override
-        public Ingredient getRepairMaterial() {
-            return this.repairMaterial.getValue();
-        }
-    }
-    public enum OtherUtilitiesArmorMaterial implements IArmorMaterial{
-        VIBRANIUM(OtherUtilities.MOD_ID + ":armorv", 10 , new int[]{92,94,110,90},250, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,100.0f, () -> {
-           return Ingredient.fromItems(ItemInit.vibranium);
-        });
-        private static final int[] MAX_DAMAGE_ARRAY = new int[] {92,96,105,94};
-        private final String name;
-        private final int maxDamageFactor;
-        private final int[] damageReductionAmountArray;
-        private final int enchantability;
-        private final SoundEvent soundevent;
-        private final float toughness;
-        private final LazyValue<Ingredient> repairMaterial;
-
-        private OtherUtilitiesArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountIn, int enchantabilityIn, SoundEvent soundEventIn, float toughnessIn, Supplier<Ingredient>repairMaterialIn){
-            this.name = nameIn;
-            this.maxDamageFactor = maxDamageFactorIn;
-            this.damageReductionAmountArray = damageReductionAmountIn;
-            this.enchantability = enchantabilityIn;
-            this.soundevent = soundEventIn;
-            this.toughness = toughnessIn;
-            this.repairMaterial = new LazyValue<>(repairMaterialIn);
-
-        }
-
-        @Override
-        public int getDurability(EquipmentSlotType slotIn) {
-            return 20000;
-        }
-
-        @Override
-        public int getDamageReductionAmount(EquipmentSlotType slotIn) {
-            return this.damageReductionAmountArray[slotIn.getIndex()];
-        }
-
-        @Override
-        public int getEnchantability() {
-            return this.enchantability;
-        }
-
-        @Override
-        public SoundEvent getSoundEvent() {
-            return this.soundevent;
-        }
-
-        @Override
-        public Ingredient getRepairMaterial() {
-            return this.repairMaterial.getValue();
-        }
-
-        @OnlyIn(Dist.CLIENT)
-        @Override
-        public String getName() {
-            return this.name;
-        }
-
-        @Override
-        public float getToughness() {
-            return this.toughness;
-        }
-    }
+    } */
 }
