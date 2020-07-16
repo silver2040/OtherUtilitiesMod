@@ -4,8 +4,9 @@ import com.Silver2040.OtherUtilities.OtherUtilities;
 import com.Silver2040.OtherUtilities.objects.blocks.BlockItemBase;
 import com.Silver2040.OtherUtilities.objects.items.ItemBase;
 import com.Silver2040.OtherUtilities.objects.items.bows.*;
-import com.Silver2040.OtherUtilities.util.enums.CaliberItemTier;
-import com.Silver2040.OtherUtilities.util.enums.VibraniumItemTier;
+import com.Silver2040.OtherUtilities.util.enums.ArmorTier;
+import com.Silver2040.OtherUtilities.util.enums.ItemTier;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -85,22 +86,31 @@ public class ItemInit {
 
     //tools
     public static final RegistryObject<Item> vibranium_sword = ITEMS.register("vibranium_sword", () ->
-            new SwordItem(VibraniumItemTier.VIBRANIUM, 59,0f, new Item.Properties().group(OtherUtilities.TAB)));
+            new SwordItem(ItemTier.VIBRANIUM, 59,0f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> vibranium_pickaxe = ITEMS.register("vibranium_pickaxe", () ->
-            new PickaxeItem(VibraniumItemTier.VIBRANIUM,-36,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+            new PickaxeItem(ItemTier.VIBRANIUM,-36,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> vibranium_shovel = ITEMS.register("vibranium_shovel", () ->
-            new ShovelItem(VibraniumItemTier.VIBRANIUM,-36,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+            new ShovelItem(ItemTier.VIBRANIUM,-36,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> vibranium_axe = ITEMS.register("vibranium_axe", () ->
-            new AxeItem(VibraniumItemTier.VIBRANIUM,64,-3.0f, new Item.Properties().group(OtherUtilities.TAB)));
+            new AxeItem(ItemTier.VIBRANIUM,64,-3.0f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> caliber_sword = ITEMS.register("caliber_sword", () ->
-            new SwordItem(CaliberItemTier.CALIBER, 1,-1.5f, new Item.Properties().group(OtherUtilities.TAB)));
+            new SwordItem(ItemTier.CALIBER, 1,-1.5f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> caliber_pickaxe = ITEMS.register("caliber_pickaxe", () ->
-            new PickaxeItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+            new PickaxeItem(ItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> caliber_shovel = ITEMS.register("caliber_shovel", () ->
-            new ShovelItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+            new ShovelItem(ItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> caliber_axe = ITEMS.register("caliber_axe", () ->
-            new AxeItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+            new AxeItem(ItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
 
+    // armor
+    public static final RegistryObject<ArmorItem> vibranium_helmet = ITEMS.register("vibranium_helmet", () ->
+            new ArmorItem(ArmorTier.VIBRANIUM, EquipmentSlotType.HEAD, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> vibranium_chestplate = ITEMS.register("vibranium_chestplate", () ->
+            new ArmorItem(ArmorTier.VIBRANIUM, EquipmentSlotType.CHEST, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> vibranium_leggings = ITEMS.register("vibranium_leggings", () ->
+            new ArmorItem(ArmorTier.VIBRANIUM, EquipmentSlotType.LEGS, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> vibranium_boots = ITEMS.register("vibranium_boots", () ->
+            new ArmorItem(ArmorTier.VIBRANIUM, EquipmentSlotType.FEET, new Item.Properties().group(OtherUtilities.TAB)));
     /*
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event){
