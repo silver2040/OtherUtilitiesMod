@@ -1,3 +1,7 @@
+[![Master Branch Status](https://github.com/silver2040/OtherUtilitiesMod/workflows/Java%20CI%20with%20Gradle/badge.svg)](https://github.com/silver2040/OtherUtilitiesMod/actions)
+
+
+
 -------------------------------------------
 Source installation information for modders
 -------------------------------------------
