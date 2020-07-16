@@ -1,5 +1,6 @@
-package com.Silver2040.OtherUtilities.init;
+package com.Silver2040.OtherUtilities.util;
 
+import com.Silver2040.OtherUtilities.init.ItemInit;
 import com.Silver2040.OtherUtilities.objects.items.bows.BaseBow;
 import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.util.ResourceLocation;

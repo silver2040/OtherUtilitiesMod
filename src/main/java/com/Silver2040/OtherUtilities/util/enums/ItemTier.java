@@ -3,13 +3,17 @@ package com.Silver2040.OtherUtilities.util.enums;
 import com.Silver2040.OtherUtilities.init.ItemInit;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyValue;
 
 import java.util.function.Supplier;
 
-public enum CaliberItemTier implements IItemTier {
+public enum ItemTier implements IItemTier {
+
     CALIBER(4, 2000, 13.0F,7.0F, 250, () -> {
         return Ingredient.fromItems(ItemInit.caliber.get());
+    }),
+
+    VIBRANIUM(5, 10000, 80.0F, 40.0F, 250, () -> {
+        return Ingredient.fromItems(ItemInit.vibranium.get());
     });
 
     private final int harvestLevel;
@@ -17,14 +21,15 @@ public enum CaliberItemTier implements IItemTier {
     private final float efficiency;
     private final float attackDamage;
     private final int enchantability;
-    private final LazyValue<Ingredient> repairMaterial;
-    CaliberItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
+    private final Supplier<Ingredient> repairMaterial;
+
+    ItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
         this.harvestLevel = harvestLevel;
         this.maxUses = maxUses;
         this.efficiency = efficiency;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairMaterial = new LazyValue<>(repairMaterial);
+        this.repairMaterial = repairMaterial;
     }
 
     @Override
@@ -54,6 +59,6 @@ public enum CaliberItemTier implements IItemTier {
 
     @Override
     public Ingredient getRepairMaterial() {
-        return this.repairMaterial.getValue();
+        return this.repairMaterial.get();
     }
 }

@@ -1,7 +1,7 @@
 package com.Silver2040.OtherUtilities;
 
 import com.Silver2040.OtherUtilities.init.ItemInit;
-import com.Silver2040.OtherUtilities.init.ItemPropertyOverrides;
+import com.Silver2040.OtherUtilities.util.ItemPropertyOverrides;
 import com.Silver2040.OtherUtilities.init.BlockInit;
 import com.Silver2040.OtherUtilities.world.gen.OreGen;
 import net.minecraft.item.ItemGroup;
