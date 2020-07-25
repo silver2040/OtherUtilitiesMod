@@ -4,6 +4,7 @@ import com.Silver2040.OtherUtilities.OtherUtilities;
 import com.Silver2040.OtherUtilities.objects.blocks.BlockItemBase;
 import com.Silver2040.OtherUtilities.objects.items.ItemBase;
 import com.Silver2040.OtherUtilities.objects.items.bows.*;
+import com.Silver2040.OtherUtilities.objects.items.rightClickItems.WeatherItem;
 import com.Silver2040.OtherUtilities.util.enums.CaliberItemTier;
 import com.Silver2040.OtherUtilities.util.enums.VibraniumItemTier;
 import net.minecraft.item.*;
@@ -38,6 +39,7 @@ public class ItemInit {
     public static final RegistryObject<Item> diamond_bow = ITEMS.register("diamond_bow", DiamondBow::new);
     public static final RegistryObject<Item> iron_bow = ITEMS.register("iron_bow", IronBow::new);
     public static final RegistryObject<Item> gold_bow =  ITEMS.register("gold_bow", GoldBow::new);
+
 
     // block-items
     public static final RegistryObject<BlockItem> Caliber_Block_Item = ITEMS.register("caliber_block", () ->
@@ -100,7 +102,8 @@ public class ItemInit {
             new ShovelItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> caliber_axe = ITEMS.register("caliber_axe", () ->
             new AxeItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
-
+    public static final RegistryObject<Item> weather_staff = ITEMS.register("weather_staff", () ->
+            new WeatherItem(new Item.Properties().group(OtherUtilities.TAB)));
     /*
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event){
