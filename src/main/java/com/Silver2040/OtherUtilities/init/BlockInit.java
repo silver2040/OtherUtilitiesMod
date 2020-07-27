@@ -2,12 +2,13 @@ package com.Silver2040.OtherUtilities.init;
 
 import com.Silver2040.OtherUtilities.OtherUtilities;
 import com.Silver2040.OtherUtilities.objects.blocks.*;
-import com.Silver2040.OtherUtilities.objects.items.*;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -19,7 +20,9 @@ public class BlockInit {
         BLOCKS.register(modEventBus);
 
     }
-
+    public static final RegistryObject<Block> Smeltery_Block = BLOCKS.register("smeltery",
+            () -> new SmelteryBlock(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(1,10)
+                    .harvestTool(ToolType.PICKAXE).sound(SoundType.ANVIL)));
     //public static final RegistryObject<Item> Caliber_Helmet = ITEMS.register("caliber_helmet", ItemBase::new);
     public static final RegistryObject<Block> Caliber_Block = BLOCKS.register("caliber_block", CaliberBlock::new);
     // public static final RegistryObject<Item> Caliber_Block_Item = ITEMS.register("caliber_block", () -> new BlockItemBase(Caliber_Block.get()));
@@ -35,6 +38,7 @@ public class BlockInit {
     // public static final RegistryObject<Item> diamond_bow = ITEMS.register("diamond_bow", DiamondBow::new);
     // public static final RegistryObject<Item> iron_bow = ITEMS.register("iron_bow", IronBow::new);
     // public static final RegistryObject<Item> gold_bow =  ITEMS.register("gold_bow", GoldBow::new);
+
 
 
 

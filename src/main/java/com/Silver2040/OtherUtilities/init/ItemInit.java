@@ -25,9 +25,9 @@ public class ItemInit {
         ITEMS.register(modEventBus);
     }
 
-    // materials??
+    // misc
     public static final RegistryObject<Item> axle = ITEMS.register("axle", ItemBase::new);
-    public static final RegistryObject<Item> circuit_board = ITEMS.register("circut_board", ItemBase::new);
+    public static final RegistryObject<Item> circuit_board = ITEMS.register("circuit_board", ItemBase::new);
     public static final RegistryObject<Item> plastic = ITEMS.register("plastic", ItemBase::new);
     public static final RegistryObject<Item> gear = ITEMS.register("gear", ItemBase::new);
     public static final RegistryObject<Item> motor = ITEMS.register("motor", ItemBase::new);
@@ -52,6 +52,8 @@ public class ItemInit {
             new BlockItemBase(BlockInit.Caliber_Ore_Block.get()));
     public static final RegistryObject<BlockItem> Beskar_Steel_Block_Item = ITEMS.register("beskar_steel_block", () ->
             new BlockItemBase(BlockInit.Beskar_Steel_Block.get()));
+    public static final RegistryObject<BlockItem> Smeltery_Block_Item = ITEMS.register("smeltery", () ->
+            new BlockItemBase(BlockInit.Smeltery_Block.get()));
 
 
     // food

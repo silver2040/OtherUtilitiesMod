@@ -61,7 +61,7 @@ public class OtherUtilities {
     public static final ItemGroup TAB = new ItemGroup("OtherUtilitiesTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(BlockInit.Caliber_Block.get());
+            return new ItemStack(ItemInit.caliber.get());
         }
     };
 

@@ -25,13 +25,7 @@ public class WeatherItem extends Item {
         if (NumberClicked == 3){
             worldIn.setThunderStrength(5);
         }
-        if(NumberClicked == 4){
-            worldIn.setThunderStrength(0);
-            worldIn.setRainStrength(0);
-            NumberClicked = 1;
-
-
-        }
+        if(NumberClicked >= 4)
         NumberClicked++;
 
         return super.onItemRightClick(worldIn, playerIn, handIn);

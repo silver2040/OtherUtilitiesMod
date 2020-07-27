@@ -1,0 +1,9 @@
+
+{
+  "variants": {
+    "facing=north": { "model": "otherutilities:block/smeltery" },
+    "facing=south": { "model": "otherutilities:block/smeltery", "y": 180 },
+    "facing=west":  { "model": "otherutilities:block/smeltery", "y": 270 },
+    "facing=east":  { "model": "otherutilities:block/smeltery", "y": 90 }
+  }
+}
