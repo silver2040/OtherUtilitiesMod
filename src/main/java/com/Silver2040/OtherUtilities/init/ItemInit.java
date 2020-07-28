@@ -122,7 +122,7 @@ public class ItemInit {
     public static final RegistryObject<Item> magmium_sword = ITEMS.register("magmium_sword", () ->
             new SwordItem(MagmiumItemTier.MAGMIUM,5,2.8f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> magmium_axe = ITEMS.register("magmium_axe", () ->
-            new AxeItem(MagmiumItemTier.MAGMIUM,8,-3.8f, new Item.Properties().group(OtherUtilities.TAB)));
+            new AxeItem(MagmiumItemTier.MAGMIUM,8,-1.8f, new Item.Properties().group(OtherUtilities.TAB)));
 
 
     // armor
