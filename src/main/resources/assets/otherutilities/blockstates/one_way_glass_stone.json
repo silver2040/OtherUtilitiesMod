@@ -1,0 +1,9 @@
+
+{
+  "variants": {
+    "facing=north": { "model": "otherutilities:block/one_way_glass_stone" },
+    "facing=south": { "model": "otherutilities:block/one_way_glass_stone", "y": 180 },
+    "facing=west":  { "model": "otherutilities:block/one_way_glass_stone", "y": 270 },
+    "facing=east":  { "model": "otherutilities:block/one_way_glass_stone", "y": 90 }
+  }
+}

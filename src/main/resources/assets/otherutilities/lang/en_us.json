@@ -35,5 +35,17 @@
   "item.otherutilities.vibranium_helmet": "Vibranium Helmet",
   "item.otherutilities.vibranium_chestplate": "Vibranium Chestplate",
   "item.otherutilities.vibranium_leggings": "Vibranium Leggings",
-  "item.otherutilities.vibranium_boots": "Vibranium Boots"
+  "item.otherutilities.vibranium_boots": "Vibranium Boots",
+  "block.otherutilities.one_way_glass_stonebrick": "One Way Glass",
+  "block.otherutilities.one_way_glass_stone": "One Way Glass",
+  "block.otherutilities.magmium_ore_block": "Magmium Ore",
+  "item.otherutilities.magmium_helmet": "Magmium Helmet",
+  "item.otherutilities.magmium_chestplate": "Magmium Chestplate",
+  "item.otherutilities.magmium_leggings": "Magmium Leggings",
+  "item.otherutilities.magmium_boots": "Magmium Boots",
+  "item.otherutilities.magmium_sword": "Magmium Sword",
+  "item.otherutilities.magmium_axe": "Magmium Axe",
+  "item.otherutilities.magmium_shovel": "Magmium Shovel",
+  "item.otherutilities.magmium_pickaxe": "Magmium Pickaxe",
+  "block.otherutilities.magmium_block": "Block of Magmium"
 }

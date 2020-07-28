@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xx ",
+    "xy ",
+    " y "
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "otherutilities:magmium"
+    },
+    "y":
+    {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result":
+  {
+    "item": "otherutilities:magmium_axe",
+    "count": 1
+  }
+}

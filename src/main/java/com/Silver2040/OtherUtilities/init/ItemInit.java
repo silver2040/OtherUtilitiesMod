@@ -5,8 +5,8 @@ import com.Silver2040.OtherUtilities.objects.blocks.BlockItemBase;
 import com.Silver2040.OtherUtilities.objects.items.ItemBase;
 import com.Silver2040.OtherUtilities.objects.items.bows.*;
 import com.Silver2040.OtherUtilities.objects.items.rightClickItems.WeatherItem;
-import com.Silver2040.OtherUtilities.util.enums.CaliberItemTier;
-import com.Silver2040.OtherUtilities.util.enums.VibraniumItemTier;
+import com.Silver2040.OtherUtilities.util.enums.*;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -39,6 +39,8 @@ public class ItemInit {
     public static final RegistryObject<Item> diamond_bow = ITEMS.register("diamond_bow", DiamondBow::new);
     public static final RegistryObject<Item> iron_bow = ITEMS.register("iron_bow", IronBow::new);
     public static final RegistryObject<Item> gold_bow =  ITEMS.register("gold_bow", GoldBow::new);
+    public static final RegistryObject<Item> magmium_ingot = ITEMS.register("magmium_ingot", ItemBase::new);
+
 
 
     // block-items
@@ -54,7 +56,14 @@ public class ItemInit {
             new BlockItemBase(BlockInit.Beskar_Steel_Block.get()));
     public static final RegistryObject<BlockItem> Smeltery_Block_Item = ITEMS.register("smeltery", () ->
             new BlockItemBase(BlockInit.Smeltery_Block.get()));
-
+    public static final RegistryObject<BlockItem> Magmium_Ore = ITEMS.register("magmium_ore", () ->
+            new BlockItemBase(BlockInit.Magmium_Ore_Block.get()));
+   /*
+    public static final RegistryObject<BlockItem> One_Way_Glass_StoneBrick = ITEMS.register("one_way_glass_stonebrick", () ->
+            new BlockItemBase(BlockInit.One_Way_Glass_StoneBrick.get()));
+    public static final RegistryObject<BlockItem> One_Way_Glass_Stone = ITEMS.register("one_way_glass_stone", () ->
+            new BlockItemBase(BlockInit.One_Way_Glass_Stone.get()));
+*/
 
     // food
     public static final RegistryObject<Item> diamond_apple = ITEMS.register("diamond_apple", () ->
@@ -106,6 +115,34 @@ public class ItemInit {
             new AxeItem(CaliberItemTier.CALIBER,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
     public static final RegistryObject<Item> weather_staff = ITEMS.register("weather_staff", () ->
             new WeatherItem(new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> magmium_pickaxe = ITEMS.register("magmium_pickaxe", () ->
+            new PickaxeItem(MagmiumItemTier.MAGMIUM,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> magmium_shovel = ITEMS.register("magmium_shovel", () ->
+            new ShovelItem(MagmiumItemTier.MAGMIUM,-3,-2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> magmium_sword = ITEMS.register("magmium_sword", () ->
+            new SwordItem(MagmiumItemTier.MAGMIUM,5,2.8f, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<Item> magmium_axe = ITEMS.register("magmium_axe", () ->
+            new AxeItem(MagmiumItemTier.MAGMIUM,8,-3.8f, new Item.Properties().group(OtherUtilities.TAB)));
+
+
+    // armor
+    public static final RegistryObject<ArmorItem> vibranium_helmet = ITEMS.register("vibranium_helmet", () ->
+            new ArmorItem(ArmorTier.VIBRANIUM, EquipmentSlotType.HEAD, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> vibranium_chestplate = ITEMS.register("vibranium_chestplate", () ->
+            new ArmorItem(ArmorTier.VIBRANIUM, EquipmentSlotType.CHEST, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> vibranium_leggings = ITEMS.register("vibranium_leggings", () ->
+            new ArmorItem(ArmorTier.VIBRANIUM, EquipmentSlotType.LEGS, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> vibranium_boots = ITEMS.register("vibranium_boots", () ->
+            new ArmorItem(ArmorTier.VIBRANIUM, EquipmentSlotType.FEET, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> magmium_helmet = ITEMS.register("magmium_helmet", () ->
+            new ArmorItem(MagmiumArmorTier.MAGMIUM, EquipmentSlotType.HEAD, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> magmium_chestplate = ITEMS.register("magmium_chestplate", () ->
+            new ArmorItem(MagmiumArmorTier.MAGMIUM, EquipmentSlotType.CHEST, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> magmium_leggings = ITEMS.register("magmium_leggings", () ->
+            new ArmorItem(MagmiumArmorTier.MAGMIUM, EquipmentSlotType.LEGS, new Item.Properties().group(OtherUtilities.TAB)));
+    public static final RegistryObject<ArmorItem> magmium_boots = ITEMS.register("magmium_boots", () ->
+            new ArmorItem(MagmiumArmorTier.MAGMIUM, EquipmentSlotType.FEET, new Item.Properties().group(OtherUtilities.TAB)));
+
     /*
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event){

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "otherutilities:magmium_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "otherutilities:magmium_block",
+    "count": 1
+  }
+}

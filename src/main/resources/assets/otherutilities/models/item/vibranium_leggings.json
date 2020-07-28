@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "otherutilities:items/vibranium_helmetvibranium_leggings.json"
+    "layer0": "otherutilities:items/vibranium_leggings"
   }
 }

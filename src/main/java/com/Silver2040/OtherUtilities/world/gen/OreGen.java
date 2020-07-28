@@ -1,6 +1,7 @@
 package com.Silver2040.OtherUtilities.world.gen;
 
 import com.Silver2040.OtherUtilities.init.BlockInit;
+import com.mojang.realmsclient.dto.WorldTemplate;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStage;
