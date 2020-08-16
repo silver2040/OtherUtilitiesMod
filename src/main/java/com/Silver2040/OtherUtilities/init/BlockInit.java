@@ -30,9 +30,9 @@ public class BlockInit {
     public static final RegistryObject<Block> Magmium_Block = BLOCKS.register("magmium_block", MagmiumBlock::new);
 
     //Special Blocks
-    public static final RegistryObject<Block> Smeltery_Block = BLOCKS.register("smeltery",
+    /*public static final RegistryObject<Block> Smeltery_Block = BLOCKS.register("smeltery",
             () -> new SmelteryBlock(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(1.5f,10)
-                    .harvestTool(ToolType.PICKAXE).sound(SoundType.ANVIL)));
+                    .harvestTool(ToolType.PICKAXE).sound(SoundType.ANVIL)));*/
     /*
     public static final RegistryObject<Block> One_Way_Glass_StoneBrick = BLOCKS.register("one_way_glass_stonebrick",
             () -> new OneWayGlassStoneBrick(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(1.5f,6)
