@@ -6,7 +6,9 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.CreatureEntity;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,12 +30,14 @@ public class BlockInit {
     public static final RegistryObject<Block> Beskar_Steel_Block = BLOCKS.register("beskar_steel_block", BeskarSteelBlock::new);
     public static final RegistryObject<Block> Magmium_Ore_Block = BLOCKS.register("magmium_ore_block", MagmiumOreBlock::new);
     public static final RegistryObject<Block> Magmium_Block = BLOCKS.register("magmium_block", MagmiumBlock::new);
+    public static final RegistryObject<Block> Insanity_Block = BLOCKS.register("insanity_block", InsanityBlock::new);
+
 
     //Special Blocks
     /*public static final RegistryObject<Block> Smeltery_Block = BLOCKS.register("smeltery",
             () -> new SmelteryBlock(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(1.5f,10)
                     .harvestTool(ToolType.PICKAXE).sound(SoundType.ANVIL)));*/
-    /*
+/*
     public static final RegistryObject<Block> One_Way_Glass_StoneBrick = BLOCKS.register("one_way_glass_stonebrick",
             () -> new OneWayGlassStoneBrick(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(1.5f,6)
                     .harvestTool(ToolType.PICKAXE).sound(SoundType.STONE)));

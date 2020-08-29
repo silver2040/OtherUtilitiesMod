@@ -54,10 +54,14 @@ public class ItemInit {
             new BlockItemBase(BlockInit.Caliber_Ore_Block.get()));
     public static final RegistryObject<BlockItem> Beskar_Steel_Block_Item = ITEMS.register("beskar_steel_block", () ->
             new BlockItemBase(BlockInit.Beskar_Steel_Block.get()));
-    public static final RegistryObject<BlockItem> Smeltery_Block_Item = ITEMS.register("smeltery", () ->
-            new BlockItemBase(BlockInit.Smeltery_Block.get()));
+    /*public static final RegistryObject<BlockItem> Smeltery_Block_Item = ITEMS.register("smeltery", () ->
+             new BlockItemBase(BlockInit.Smeltery_Block.get()));*/
     public static final RegistryObject<BlockItem> Magmium_Ore = ITEMS.register("magmium_ore", () ->
             new BlockItemBase(BlockInit.Magmium_Ore_Block.get()));
+    public static final RegistryObject<BlockItem> Magmium_Block_Item = ITEMS.register("magmium_block", () ->
+            new BlockItemBase(BlockInit.Magmium_Block.get()));
+    public static final RegistryObject<BlockItem> Insanity_Block_Item = ITEMS.register("insanity_block", () ->
+            new BlockItemBase(BlockInit.Insanity_Block.get()));
    /*
     public static final RegistryObject<BlockItem> One_Way_Glass_StoneBrick = ITEMS.register("one_way_glass_stonebrick", () ->
             new BlockItemBase(BlockInit.One_Way_Glass_StoneBrick.get()));

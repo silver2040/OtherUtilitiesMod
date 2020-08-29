@@ -9,13 +9,12 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.*;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class OreGen {
     public static void generateOre() {
-        for (Biome biome : ForgeRegistries.BIOMES) {
-                if ((biome == Biomes.SAVANNA)||(biome == Biomes.SAVANNA_PLATEAU)) {
+        /*for (Biome biome : ForgeRegistries.BIOMES) {
+                if ((biome == Biomes.SAVANNA )||(biome == Biomes.SAVANNA_PLATEAU)) {
                     ConfiguredPlacement<CountRangeConfig> VibraniumConfig = Placement.COUNT_RANGE
                             .configure(new CountRangeConfig(1, 5, 5, 20));
                     biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
@@ -37,5 +36,7 @@ public class OreGen {
 
                 }
                 }
+    */
     }
+
 }
