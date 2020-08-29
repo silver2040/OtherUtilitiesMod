@@ -40,6 +40,8 @@ public class ItemInit {
     public static final RegistryObject<Item> iron_bow = ITEMS.register("iron_bow", IronBow::new);
     public static final RegistryObject<Item> gold_bow =  ITEMS.register("gold_bow", GoldBow::new);
     public static final RegistryObject<Item> magmium_ingot = ITEMS.register("magmium_ingot", ItemBase::new);
+    public static final RegistryObject<Item> bucket_fake_water = ITEMS.register("bucket_of_fake_water", ItemBase::new);
+
 
 
 
