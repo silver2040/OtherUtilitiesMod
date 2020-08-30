@@ -40,9 +40,9 @@ public class FluidInit {
             () -> FAKE_WATER_FLUID.get(), () -> FAKE_WATER_FLOWING.get(),
             FluidAttributes.builder(FAKE_WATER_STILL_RL, FAKE_WATER_FLOWING_RL).density(1).luminosity(10).rarity(Rarity.RARE).viscosity(2)
                     .sound(SoundEvents.BLOCK_SHULKER_BOX_OPEN).overlay(FAKE_WATER_OVERLAY_RL))
-            .block(() -> FluidInit.FAKE_WATER_BLOCK.get());
+            .block(() -> FluidInit.FAKE_WATER_BLOCK.get()).bucket(() -> ItemInit.bucket_of_fake_water.get());
 
-    public static final RegistryObject<FlowingFluidBlock> FAKE_WATER_BLOCK = BlockInit.BLOCKS.register("fake_water_liquid.json",
+    public static final RegistryObject<FlowingFluidBlock> FAKE_WATER_BLOCK = BlockInit.BLOCKS.register("fake_water_liquid",
             () -> new FlowingFluidBlock(() -> FluidInit.FAKE_WATER_FLUID.get(), Block.Properties.create(Material.WATER)
                     .doesNotBlockMovement().hardnessAndResistance(100.0f).noDrops()));
 }

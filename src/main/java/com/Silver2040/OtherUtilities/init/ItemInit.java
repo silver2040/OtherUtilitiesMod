@@ -15,6 +15,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import static net.minecraft.item.Items.BUCKET;
 
 
 public class ItemInit {
@@ -40,7 +41,9 @@ public class ItemInit {
     public static final RegistryObject<Item> iron_bow = ITEMS.register("iron_bow", IronBow::new);
     public static final RegistryObject<Item> gold_bow =  ITEMS.register("gold_bow", GoldBow::new);
     public static final RegistryObject<Item> magmium_ingot = ITEMS.register("magmium_ingot", ItemBase::new);
-    public static final RegistryObject<Item> bucket_fake_water = ITEMS.register("bucket_of_fake_water", ItemBase::new);
+    public static final RegistryObject<BucketItem> bucket_of_fake_water = ITEMS.register("bucket_of_fake_water",
+            () -> new BucketItem(() -> FluidInit.FAKE_WATER_FLUID.get(),
+                    (new Item.Properties()).containerItem(BUCKET).maxStackSize(1).group(OtherUtilities.TAB)));
 
 
 

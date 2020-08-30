@@ -31,6 +31,7 @@ public class BlockInit {
     public static final RegistryObject<Block> Magmium_Ore_Block = BLOCKS.register("magmium_ore_block", MagmiumOreBlock::new);
     public static final RegistryObject<Block> Magmium_Block = BLOCKS.register("magmium_block", MagmiumBlock::new);
     public static final RegistryObject<Block> Insanity_Block = BLOCKS.register("insanity_block", InsanityBlock::new);
+    public static final RegistryObject<Block> Fake_Water_Block = BLOCKS.register("fake_water_block", FakeWaterBlock::new);
 
 
     //Special Blocks
